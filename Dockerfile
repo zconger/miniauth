@@ -12,10 +12,10 @@ RUN adduser --disabled-password app
 USER app
 
 # set the working directory in the container
-WORKDIR /miniapi
+WORKDIR /miniauth
 
 # copy the content of the local src directory to the working directory
-COPY miniapi/ .
+COPY miniauth/ .
 
 # command to run on container start
 CMD [ "python", "./app.py" ]

@@ -14,7 +14,7 @@ $ pip3 install -r ./requirements.txt
 
 To run the API service directly, run:
 ```shell
-$ ./miniapi/app.py
+$ ./miniauth/app.py
 ```
 
 The API service will listen on 0.0.0.0 and port 5000. You can reach the app at [http://localhost:5000/](http://localhost:5000/).
@@ -24,32 +24,32 @@ The API service will listen on 0.0.0.0 and port 5000. You can reach the app at [
 To build the Docker container, run:
 
 ```shell
-$ docker build . -t miniapi
+$ docker build . -t miniauth
 ```
 
 And to run it, run:
 ```shell
-$ docker run -p 5000:5000 -n miniapi --rm -d miniapi
+$ docker run -p 5000:5000 -n miniauth --rm -d miniauth
 ```
 
 You can reach the container at [http://localhost:5000/](http://localhost:5000/).
 
 To stop the container, run:
 ```shell
-$ docker stop miniapi
+$ docker stop miniauth
 ```
 
 ## Local Development
 
 ### Pushing Docker Containers
-As a convenience, the script `./scripts/docker-build.sh` may be used to build and push the miniapi container to Docker Hub. To use it, first log on to docker hub.
+As a convenience, the script `./scripts/docker-build.sh` may be used to build and push the miniauth container to Docker Hub. To use it, first log on to docker hub.
 ```shell
 $ docker login
 ```
 
 Then run the `./scripts/docker-build.sh` script with the name of the container image you wish to push. The script will first build and then push the container with both the `:latest` and `:<version>` tag as described below in [Versioning](#Versioning).
 ```shell
-$ ./scripts/docker-build.sh zconger/miniapi
+$ ./scripts/docker-build.sh zconger/miniauth
 ```
 
 ### Versioning
@@ -94,7 +94,7 @@ This repository contains a GitHub Actions workflow at `./.github/workflows/conta
     - `DOCKER_USERNAME`: Your Docker Hub username
     - `DOCKER_PASSWORD`: Your Docker Hub password or access token
 
-You must also specify the name of the container image you wish to push in the `jobs.push_to_registry.env.IMAGE_NAME` setting in `./.github/workflows/container-push.yml`. This environment variable is set to `zconger/miniapi` by default, which won't work without my Docker Hub credentials!
+You must also specify the name of the container image you wish to push in the `jobs.push_to_registry.env.IMAGE_NAME` setting in `./.github/workflows/container-push.yml`. This environment variable is set to `zconger/miniauth` by default, which won't work without my Docker Hub credentials!
 
 *Thank you!*
 *--Zachary*

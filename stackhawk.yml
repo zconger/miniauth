@@ -1,4 +1,4 @@
 app:
-  applicationId: ${APP_ID:9e3a5594-0ec8-40f4-8ec7-48ef4442b767}
-  host: ${APP_HOST:http://miniapi.development:5000}
+  applicationId: ${APP_ID}
+  host: ${APP_HOST:http://miniauth.development:5000}
   env: ${APP_ENV:Development}
